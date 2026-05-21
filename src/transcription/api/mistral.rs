@@ -47,7 +47,10 @@ pub async fn transcribe(config: &TranscriptionConfig, audio_path: &Path) -> anyh
         for keyword in &config.keywords {
             form = form.text("context_bias", keyword.clone());
         }
-        tracing::debug!("Keywords used as context_bias for Mistral model: {:?}", config.keywords);
+        tracing::debug!(
+            "Keywords used as context_bias for Mistral model: {:?}",
+            config.keywords
+        );
     }
 
     // Add optional language parameter from provider config
@@ -84,7 +87,9 @@ pub async fn transcribe(config: &TranscriptionConfig, audio_path: &Path) -> anyh
             } else if e.is_timeout() {
                 "Request to Mistral timed out. The API server is not responding.".to_string()
             } else if e.to_string().contains("builder") {
-                format!("Failed to build Mistral API request: {e}. This may be a configuration error.")
+                format!(
+                    "Failed to build Mistral API request: {e}. This may be a configuration error."
+                )
             } else {
                 format!("Mistral network error: {e}")
             };

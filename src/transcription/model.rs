@@ -42,7 +42,7 @@ pub enum TranscriptionModel {
     ElevenLabsScribeV1,
     /// Mistral Voxtral Mini Transcribe model (fast, efficient, 13 languages)
     MistralVoxtralMiniTranscribe,
-    /// Mistral Voxtral Mini Transcribe 2 model (newer version, improved accuracy)
+    /// Mistral Voxtral Mini 2602 model (pinned version)
     MistralVoxtralMiniTranscribeV2,
 }
 
@@ -117,7 +117,7 @@ impl TranscriptionModel {
                 "Voxtral Mini Transcribe (fast, efficient, 13 languages)"
             }
             TranscriptionModel::MistralVoxtralMiniTranscribeV2 => {
-                "Voxtral Mini Transcribe 2 (newer, improved accuracy)"
+                "Voxtral Mini 2602 (newer version, improved accuracy)"
             }
         }
     }
@@ -172,7 +172,7 @@ impl TranscriptionModel {
             TranscriptionModel::ElevenLabsScribeV2 => "scribe_v2",
             TranscriptionModel::ElevenLabsScribeV1 => "scribe_v1",
             TranscriptionModel::MistralVoxtralMiniTranscribe => "voxtral-mini-latest",
-            TranscriptionModel::MistralVoxtralMiniTranscribeV2 => "voxtral-mini-transcribe-26-02",
+            TranscriptionModel::MistralVoxtralMiniTranscribeV2 => "voxtral-mini-2602",
         }
     }
 
